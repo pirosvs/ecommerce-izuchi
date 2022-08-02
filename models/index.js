@@ -17,14 +17,11 @@ Category.hasMany(Product, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
-  // Define the third table needed to store the foreign keys
   through: {
-    model: ProductTag,
-    //field referenced in the association must have a unique constraint placed on it. 
+    model: ProductTag, 
     unique: false
   },
-  // Define an alias for when data is retrieved
-  //call this whatever you link - related to how the data will be returned (which key)
+  // Define an alias
   as: ''
 });
 
